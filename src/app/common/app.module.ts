@@ -10,6 +10,7 @@ import { MediaPipe } from '../media/media.pipe';
 import { RecommendedComponent } from '../media/recommended/recommended.component';
 import { FavouriteComponent } from '../media/favourite/favourite.component';
 import {HttpResponse,HttpClient,HttpClientModule} from '@angular/common/http';
+import { MediaRoutingModule } from '../media/media-routing/media-routing.module';
  
 
 @NgModule({
@@ -18,7 +19,7 @@ import {HttpResponse,HttpClient,HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule
+    AppRoutingModule,FormsModule,HttpClientModule,MediaRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

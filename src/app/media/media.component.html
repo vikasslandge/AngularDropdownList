@@ -6,7 +6,19 @@
   </div>
   <br><br>
 </div> -->
-
+<head id="Head1" runat="server">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<script>
+  var app=angular.module("dropdown",[]);
+  app.controller("MyController",function($scope){
+    $scope.change= function(){
+    alert("Category Name : "+$scope.selectedCategory.category);
+  }
+  })
+  
+</script>
 <Div>
 <div style="background-color: black">
 <div align="center" *ngIf="playFlag">
@@ -15,6 +27,14 @@
  
   <!-- <input type="text" placeholder="search by category" [(ngModel)]="videoFilter"> -->
  
+  <div ng-app="dropdown" ng-controller="MyController" align="center">
+    <select ng-model="selectedCategory" ng-change="change()" >
+      <option value="0" label="select"></option>
+      <option *ngFor="let cat of videos" value="{{cat.category}}">{{cat.category}}</option>
+    </select>
+    <h2 style="color: darkseagreen">{{selectedCategory}}</h2>
+  </div>
+  
 <div> -->
   <table class="table" style="background-color: snow"> 
     <thead class="thead-dark">
